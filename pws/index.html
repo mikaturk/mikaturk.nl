@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+
+    <title>PWS</title>
+    <meta name="description" content="Demo site voor PWS">
+    <meta name="author" content="Mika Turk">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet">
+    <meta name="theme-color" content="#40E0D0">
+    <style>
+      .container {
+        padding: 20px;
+        font-family: "Roboto";
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+
+      input {
+        margin: 10px;
+      }
+      
+      p {
+        padding: 20px;
+        display: inline-block;
+      }
+
+      @media (min-width: 1500px) {
+        p {
+          width: calc(50% - 50px);
+        }
+      }
+
+      input, p, button {
+        font-size: 40px;
+      }
+
+      input[type=checkbox] {
+        zoom: 2;
+      }
+
+    </style>
+    <script type="module" src="pws/js/main.js"></script>
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <h1>V1 - Vigenere</h1>
+        <p>
+          Encrypt<br>
+          Bericht: <input id="v1-encrypt-message"><br>
+          Sleutel: <input id="v1-encrypt-key"><button id="v1-encrypt-button">Encrypt!</button><br>
+          <input id="v1-encrypt-outcome" readonly>
+        </p>
+        <p>
+          Decrypt<br>
+          Bericht: <input id="v1-decrypt-message"><br>
+          Sleutel: <input id="v1-decrypt-key"><button id="v1-decrypt-button">Decrypt!</button><br>
+          <input id="v1-decrypt-outcome" readonly>
+        </p>
+        <h1>V2 - Verschuiving van het codewoord</h1>
+        <p>
+          Encrypt<br>
+          Bericht: <input id="v2-encrypt-message"><br>
+          Sleutel: <input id="v2-encrypt-key"><button id="v2-encrypt-button">Encrypt!</button><br>
+          <input id="v2-encrypt-outcome" readonly>
+        </p>
+        <p>
+          Decrypt<br>
+          Bericht: <input id="v2-decrypt-message"><br>
+          Sleutel: <input id="v2-decrypt-key"><button id="v2-decrypt-button">Decrypt!</button><br>
+          <input id="v2-decrypt-outcome" readonly>
+        </p>
+        <h1>V3 - Verschuiving op basis van letters</h1>
+        <p>
+          Encrypt<br>
+          Bericht: <input id="v3-encrypt-message"><br>
+          Sleutel: <input id="v3-encrypt-key"><button id="v3-encrypt-button">Encrypt!</button><br>
+          <input id="v3-encrypt-outcome" readonly>
+        </p>
+        <p>
+          Decrypt<br>
+          Bericht: <input id="v3-decrypt-message"><br>
+          Sleutel: <input id="v3-decrypt-key"><button id="v3-decrypt-button">Decrypt!</button><br>
+          <input id="v3-decrypt-outcome" readonly>
+        </p>
+        <h1>V4 - Random volgorde verschuiving</h1>
+        <p>
+          Encrypt<br>
+          Bericht: <input id="v4-encrypt-message"><br>
+          Sleutel: <input id="v4-encrypt-key"><br>
+          Hussel de volgorde: <input type="checkbox" id="v4-encrypt-shufflestring-randomize"><br>
+          Volgorde: <input id="v4-encrypt-shufflestring"><br>
+          <button id="v4-encrypt-button">Encrypt!</button>
+          <input id="v4-encrypt-outcome" readonly>
+        <p>
+          Decrypt<br>
+          Bericht: <input id="v4-decrypt-message"><br>
+          Sleutel: <input id="v4-decrypt-key"><br>
+          Volgorde: <input id="v4-decrypt-shufflestring"><br>
+          <button id="v4-decrypt-button">Decrypt!</button>
+          <input id="v4-decrypt-outcome" readonly>
+        </p>
+        <h1>V5 - Nieuwe tekens</h1>
+        <p>
+          Encrypt<br>
+          Bericht: <input id="v5-encrypt-message"><br>
+          Sleutel: <input id="v5-encrypt-key"><br>
+          Hussel de volgorde: <input type="checkbox" id="v5-encrypt-shufflestring-randomize"><br>
+          Volgorde: <input id="v5-encrypt-shufflestring"><br>
+          <button id="v5-encrypt-button">Encrypt!</button>
+          <input id="v5-encrypt-outcome" readonly>
+        <p>
+          Decrypt<br>
+          Bericht: <input id="v5-decrypt-message"><br>
+          Sleutel: <input id="v5-decrypt-key"><br>
+          Volgorde: <input id="v5-decrypt-shufflestring"><br>
+          <button id="v5-decrypt-button">Decrypt!</button>
+          <input id="v5-decrypt-outcome" readonly>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
