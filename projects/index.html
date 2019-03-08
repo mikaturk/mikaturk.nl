@@ -11,41 +11,41 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet">
     <meta name="theme-color" content="#40E0D0">
     <style>
-      section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        height: 100vh;
-      }
-      .container * {
-        
+      .container {
         font-family: "Roboto";
+        height: 100vh;
+        padding: 5vh 5vw;
       }
 
-      .container h1 {
-        font-size: 80px;
+      .container h2 {
+        font-size: 45px;
       }
 
-      .container p {
-        font-size: 30px;
-        text-align: center;
+      .container ul {
+        list-style-type: disc;
       }
-      
+
       .container a {
         text-decoration: none;
-        color: rgb(20, 94, 233)
+        color: rgb(20, 94, 233);
       }
 
-      
+      .container ul {
+        margin-left: 30px;
+        margin-top: 15px;
+        font-size: 30px;
+      }
     </style>
   </head>
 
   <body>
     <section>
       <div class="container">
-        <h1>Hier komt <a href="mailto:mika@mikaturk.nl">mikaturk.nl</a></h1>
-        <p>Klik <a href="./projects">hier</a> om mijn projecten te zien</p>
+        <h2>Projects:</h2>
+        <ul>
+          <li><a href="./pws">PWS</a></li>
+          <li><a href="./hilbert">Hilbert</a></li>
+        </ul>
       </div>
     </section>
   </body>
