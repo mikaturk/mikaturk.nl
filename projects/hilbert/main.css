@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#container {
+  font-family: sans-serif;
+}
+
+#stepper {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  width: 100vw;
+  height: 10vh;
+  font-size: 5vh;
+}
+
+#increase, #decrease {
+  width: 40vw;
+  height: 10vh;
+  font-size: 5vh;
+}
+
+#output {
+  display: inline-block;
+  text-align: center;
+  width: 20vw;
+  height: 8vh;
+  line-height: 8vh;
+  font-size: 5vh;
+}
+
+#canvascontainer {
+  width: 100vw;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
