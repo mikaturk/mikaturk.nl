@@ -2,7 +2,7 @@ import { drawCurve } from "./canvas.mjs";
 import { logCall } from "./debug.mjs";
 
 const MIN_ORDER = 1;
-const MAX_ORDER = 5;
+const MAX_ORDER = 4;
 
 // default value, will be overwritten when the program runs, could probably be any value;
 let canvas_size = 512;
@@ -15,13 +15,24 @@ function hsl(h,s,l) {
   return `hsl(${h}, ${s}%, ${l}%)`
 }
 
+function easeInOut(pixelValue) {
+  return (1-Math.cos(Math.PI*pixelValue)) / 2
+}
+
+function easeInOutHsl(pixelValue) {
+  return hsl(256*easeInOut(pixelValue), 90, 50)
+}
+
 function computePixelValue(value) {
-  return hsl(value*256, 100, 50);
+  return easeInOutHsl(value)
+  // return hsl(value*256, 100, 50);
   //return rgb(value*256, value*256, value*256);
 }
 
 window.rgb = rgb;
 window.hsl = hsl;
+window.easeInOutHsl = easeInOutHsl;
+window.easeInOut = easeInOut;
 window.computePixelValue = computePixelValue;
 
 let order = 1;

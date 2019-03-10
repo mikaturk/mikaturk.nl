@@ -3,7 +3,7 @@ import { logCall, debug } from "./debug.mjs"
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
+ctx.imageSmoothingEnabled=false;
 export function drawCurve(order, pixelSize, colorFunction) {
   var t0 = performance.now();
   const matrix = createCurve(order);
