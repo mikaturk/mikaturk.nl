@@ -2,7 +2,7 @@ import { drawCurve } from "./canvas.mjs";
 import { logCall } from "./debug.mjs";
 
 const MIN_ORDER = 1;
-const MAX_ORDER = 4;
+const MAX_ORDER = 5;
 
 // default value, will be overwritten when the program runs, could probably be any value;
 let canvas_size = 512;
