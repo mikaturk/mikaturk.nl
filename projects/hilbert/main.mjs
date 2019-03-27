@@ -24,8 +24,8 @@ function easeInOutHsl(pixelValue) {
 }
 
 function computePixelValue(value) {
-  return easeInOutHsl(value)
-  // return hsl(value*256, 100, 50);
+  // return easeInOutHsl(value)
+  return hsl(value*360, 100, 50);
   //return rgb(value*256, value*256, value*256);
 }
 
