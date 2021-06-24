@@ -1,24 +1,160 @@
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* end of css reset */
+
+html, body {
+    height: 100%;
 }
 
-.container * {
-    font-family: "Roboto";
+html {
+    --background-color: #222;
+    background-color: var(--background-color);
 }
 
-.container h1 {
-    font-size: 80px;
+.container {
+    --icon-color: hsl(219, 70%, 50%);
+
+    font-size: 48px;
+    /* height: 100vh; */
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 4em 4em auto;
+    grid-template-rows: auto 1em 4em 4em auto;
+    column-gap: 0.25em;
+    row-gap: 0.25em;
+    background-color: var(--background-color);
 }
 
-.container p {
-    font-size: 30px;
+@media screen and (orientation: portrait) {
+    .container {
+        font-size: min(7.5vw, 72px);
+    }
+}
+
+p.intro {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    color: #eee;
     text-align: center;
 }
 
-.container a {
-    text-decoration: none;
-    color: rgb(20, 94, 233)
+.topleft {
+    grid-row: 3;
+    grid-column: 2;
+    --icon-color: #5865F2;
+}
+
+.topright {
+    grid-row: 3;
+    grid-column: 3;
+    --icon-color: #333;
+    --icon-color: #bbb;
+}
+
+a.topright > svg {
+    height: 2.8em;
+}
+
+.bottomleft {
+    grid-row: 4;
+    grid-column: 2;
+    --icon-color: hsl(130, 50%, 50%);
+}
+
+.bottomright {
+    grid-row: 4;
+    grid-column: 3;
+    --icon-color: #D44638;
+}
+
+.link {
+    background: none;
+    display: flex;
+    text-align: center;
+    border: 2px solid #686868;
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.link:focus,
+.link:hover {
+    border: 0.125em solid var(--icon-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--icon-color), 0px 0px 0.5em 0px var(--icon-color);
+}
+
+.link > svg {
+    height: 3em;
+}
+
+.link > svg {
+    stroke: #fff;
+    fill: none;
+}
+
+.link.topleft > svg {
+    fill: #fff;
+}
+
+.link>svg>path {
+    stroke-width: 0.7;
+}
+
+.link:focus>svg,
+.link:hover>svg {
+    /* filter: drop-shadow(0 0 0.2em var(--icon-color)); */
+    stroke: var(--icon-color);
+}
+
+.link.topleft > svg {
+    fill: #fff;
+    stroke: var(--background-color);
+}
+
+.link.topleft:focus > svg,
+.link.topleft:hover > svg {
+    fill: var(--icon-color);
+}
+
+.link.topleft:focus>svg>path,
+.link.topleft:hover>svg>path {
+    fill: var(--icon-color);
+}
+
+.link:focus > svg > path.terminal-blink,
+.link:hover > svg > path.terminal-blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {stroke: var(--icon-color)}
+    50% {stroke: var(--background-color)}
+    100% {stroke: var(--icon-color)}
 }
