@@ -1,0 +1,24 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container * {
+    font-family: "Roboto";
+}
+
+.container h1 {
+    font-size: 80px;
+}
+
+.container p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.container a {
+    text-decoration: none;
+    color: rgb(20, 94, 233)
+}
