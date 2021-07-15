@@ -29,7 +29,7 @@ body {
 }
 /* end of css reset */
 
-html, body {
+html, body, main {
     height: 100%;
 }
 
