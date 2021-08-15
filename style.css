@@ -63,30 +63,30 @@ p.intro {
     text-align: center;
 }
 
-.topleft {
+.discord {
     grid-row: 3;
     grid-column: 2;
     --icon-color: #5865F2;
 }
 
-.topright {
+.github {
     grid-row: 3;
     grid-column: 3;
     --icon-color: #333;
     --icon-color: #bbb;
 }
 
-a.topright > svg {
+a.github > svg {
     height: 2.8em;
 }
 
-.bottomleft {
+.projects {
     grid-row: 4;
     grid-column: 2;
     --icon-color: hsl(130, 50%, 50%);
 }
 
-.bottomright {
+.email {
     grid-row: 4;
     grid-column: 3;
     --icon-color: #D44638;
@@ -117,7 +117,7 @@ a.topright > svg {
     fill: none;
 }
 
-.link.topleft > svg {
+.link.discord > svg {
     fill: #fff;
 }
 
@@ -131,18 +131,18 @@ a.topright > svg {
     stroke: var(--icon-color);
 }
 
-.link.topleft > svg {
+.link.discord > svg {
     fill: #fff;
     stroke: var(--background-color);
 }
 
-.link.topleft:focus > svg,
-.link.topleft:hover > svg {
+.link.discord:focus > svg,
+.link.discord:hover > svg {
     fill: var(--icon-color);
 }
 
-.link.topleft:focus>svg>path,
-.link.topleft:hover>svg>path {
+.link.discord:focus>svg>path,
+.link.discord:hover>svg>path {
     fill: var(--icon-color);
 }
 
