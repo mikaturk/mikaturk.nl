@@ -25,7 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 /* end of css reset */
 
@@ -36,18 +36,37 @@ html, body, main {
 html {
     --background-color: #222;
     background-color: var(--background-color);
+
+    --blue: #2563EB;
+    --green: #348939;
+    --orange: #FE7E03;
+    --red: #9B1D1E;
 }
 
 .container {
-    --icon-color: hsl(219, 70%, 50%);
+    --border-thickness: 0.0625em;
+    --hover-border-thickness: 0.125em;
+
+    --border-thickness: 0.05em;
+    --hover-border-thickness: 0.1em;
+
+    --border-diff: calc(var(--hover-border-thickness) - var(--border-thickness));
+    --icon-scale-factor: 1;
+    --icon-base-size: 1.5em;
+
+    --current-text-color: #eee;
+
+    --view-box-size: 24;
+
     font-size: min(8vh, 48px);
     height: 100%;
     display: grid;
-    grid-template-columns: auto 4em 4em auto;
-    grid-template-rows: auto 1em 4em 4em auto;
+    grid-template-columns: auto 8em auto;
+    grid-template-rows: auto 1em repeat(4, 2em) auto;
     column-gap: 0.25em;
     row-gap: 0.25em;
     background-color: var(--background-color);
+    color: var(--current-text-color);
 }
 
 @media screen and (orientation: portrait) {
@@ -56,103 +75,72 @@ html {
     }
 }
 
+.link, .intro {
+    grid-column: 2;
+}
+
 p.intro {
     grid-row: 2;
-    grid-column: 2 / span 2;
-    color: #eee;
     text-align: center;
-}
-
-.discord {
-    grid-row: 3;
-    grid-column: 2;
-    --icon-color: #5865F2;
-}
-
-.github {
-    grid-row: 3;
-    grid-column: 3;
-    --icon-color: #333;
-    --icon-color: #bbb;
-}
-
-a.github > svg {
-    height: 2.8em;
-}
-
-.projects {
-    grid-row: 4;
-    grid-column: 2;
-    --icon-color: hsl(130, 50%, 50%);
-}
-
-.email {
-    grid-row: 4;
-    grid-column: 3;
-    --icon-color: #D44638;
 }
 
 .link {
     background: none;
     display: flex;
-    text-align: center;
-    border: 2px solid #686868;
+    border: var(--border-thickness) solid #686868;
     border-radius: 0.5em;
     align-items: center;
-    justify-content: center;
+    padding: var(--border-diff);
+    padding-left: calc(0.2em + var(--border-diff));
+    box-sizing: border-box;
+    text-decoration: none;
+    --text-color: var(--icon-color);
 }
 
 .link:focus,
 .link:hover {
-    border: 0.125em solid var(--icon-color);
-    box-shadow: inset 0px 0px 0.5em 0px var(--icon-color), 0px 0px 0.5em 0px var(--icon-color);
+    border: var(--hover-border-thickness) solid var(--text-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--text-color), 0px 0px 0.5em 0px var(--text-color);
+    padding: 0 0 0 0.20em;
 }
 
-.link > svg {
-    height: 3em;
+.link > p {
+    display: inline;
+    color: var(--current-text-color);
+    margin-left: 0.2em;
+}
+
+.link:focus > p,
+.link:hover > p {
+    color: var(--text-color);
 }
 
 .link > svg {
     stroke: #fff;
     fill: none;
+    height: calc(var(--icon-base-size) * var(--icon-scale-factor));
+    margin: calc((1 - var(--icon-scale-factor)) * var(--icon-base-size) / 2);
 }
 
-.link.discord > svg {
-    fill: #fff;
-}
-
-.link>svg>path {
-    stroke-width: 0.7;
-}
-
-.link:focus>svg,
-.link:hover>svg {
+.link:focus > svg,
+.link:hover > svg {
     /* filter: drop-shadow(0 0 0.2em var(--icon-color)); */
     stroke: var(--icon-color);
 }
 
-.link.discord > svg {
-    fill: #fff;
-    stroke: var(--background-color);
-}
-
-.link.discord:focus > svg,
-.link.discord:hover > svg {
-    fill: var(--icon-color);
-}
-
-.link.discord:focus>svg>path,
-.link.discord:hover>svg>path {
-    fill: var(--icon-color);
+.link > svg > circle,
+.link > svg > line,
+.link > svg > path {
+    stroke-width: calc(0.7 / 24 * var(--view-box-size));
 }
 
 .link:focus > svg > path.terminal-blink,
 .link:hover > svg > path.terminal-blink {
-    animation: blink 1s infinite;
+    animation: blink-opacity 1s infinite;
 }
 
-@keyframes blink {
-    0% {stroke: var(--icon-color)}
-    50% {stroke: var(--background-color)}
-    100% {stroke: var(--icon-color)}
+@keyframes blink-opacity {
+    0% { opacity: 1}
+    50% { opacity: 0 }
+    100% { opacity: 1 }
 }
